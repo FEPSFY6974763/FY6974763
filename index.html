@@ -4,11 +4,11 @@
     <body>
 <head>
     <title>Change Button color</title>
-    <button id="colorButtom">Click me to change color</button>
+    <button id="colorButton">Click me to change color</button>
 
     <script>
         //Get a reference to the buttom element
-        var button = document.getElementByld("colorButtom");
+        var button = document.getElementById("colorButton");
 
         //Function to change the buttom color
         function changeColor(){
@@ -16,10 +16,10 @@
             var randomColor="#"+Math.floor(Math.random()*16777215).toString(16);
 
             //set the button's background color to the random color
-            buttom.style.backgroundColor=randomColor;
+            button.style.backgroundColor=randomColor;
         }
         //Add a click event listener to the button
-        buttom.addEventListener("click",changeColor);
+        button.addEventListener("click",changeColor);
     </script>
 
 
