@@ -3,7 +3,23 @@
 <html>
   <head>
     <meta name=“viewport” content=“width=device-width, initial-scale=1.0>
-    
+    <title>This is my second consolidations page</title>
   </head>
+  <body>
+
+     <h2>Click the button below, see what happens!</h2>
+
+    <p id="result">Click me</p>
+
+    <button onclick="generateNumber()">Generate Number</button>
+    
+    <script>
+    function generateNumber() {
+      let randomNumber = Math.floor(Math.random() * 10) + 1;
+      document.getElementById("result").textContent = randomNumber
+
+        </script>
+    
   
+  </body>
 </html>
