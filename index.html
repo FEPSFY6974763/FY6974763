@@ -3,6 +3,28 @@
 <html>
     <body>
 <head>
+    <title>Change Button Colour</title>
+    <button id="colourButtom">Click me to change colour</button>
+
+    <script>
+        //Get a reference to the buttom element
+        var button = document.getElementByld</button>
+
+        //Function to change the buttom colour
+        function changeColor(){
+            //Generate a random colour
+            var randomColor="#"+Math.floor(Math.random()*16777215).toString(16);
+
+            //set the button's background colour to the random colour
+            buttom.style.backgroundColor=randomColor;
+        }
+        //Add a click event listener to the button
+        buttom.addEventListener("click",changeColor);
+    </script>
+
+
+
+    
     <img src="Uni Of Surrey banner.png" alt="Banner" width="1200" height="300">
       <h1><b>ENG0018 Computer Laboratory 2026/27</b></h1>
       <h2>Student URN: 6974763</h2>
@@ -36,7 +58,7 @@
    
        <style>
 p.ex1 {
-  margin-left: 250px;
+  margin-left: 25px;
 }
 </style>
 </head>
