@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <title>2023 City Population</title>
+     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  
+  </head>
+
+  <body>
+
+    <!--bar chart display-->
+    <div id="pie_div" style="width: 900px; height: 1400px;"></div>
+    
+    <!--bar chart script-->
+    <script>
+    google.charts.load('current', {
+        packages: ['corechart']
+    });
+
+    google.charts.setOnLoadCallback(drawCharts);
+      function drawCharts() {
+        try {
+          drawPie();
+        }
+        { catch (error) {
+            console.error("Chart Error", error);
+          }
+      }
+
+      function drawPie() 
+      var data = google.visualization.arrayToDataTable([
+        ['City', 'Population'],
+        ['London', '9648000']
+        ['Birmingham', '1153900']
+        ['Edinburgh', '554000']
+        
+      ]);
+
+        var options = {
+            title: 'City Population'
+        };
+
+        var chart = new google.visualization.PieChart(
+            document.getElementById('pie_div')
+        );
+
+        chart.draw(data, options);
+    }
+    </script>
+    
+                                                       
+  </body>
+</html>
