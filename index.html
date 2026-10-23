@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Generator</title>
+  </head>
+
+  <body>
+
+    <button id="button" onclick="generateNumber()">Generate Number</button>
+    <p id="result">Click the button to generate a number between 1-10</p>
+    
+    <script>
+      function generateNumber() {
+        let number = Math.floor(Math.random()*10)+1;
+        document.getElementById("result").textContent = number;
+      }
+    </script>
+  </body>
+</html>
