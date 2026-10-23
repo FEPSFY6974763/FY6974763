@@ -46,7 +46,24 @@
     google.charts.load('current',{'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart)
 
-        </script>
+function drawChart() {
+    var data= google.visulization.arrayToDataTable([
+        ['Task','Hours per Day'],
+        ['Work',8],
+        ['Sleep',8],
+        ['Eat',2],
+        ['Study',4]
+        ['Exercise',2]
+        ]};
+    var options = [
+        title: 'My Daily Activities'
+    };
+
+    var chart = new google.visulization.PieChart(document.getElementById('chart_div'));
+    chart.draw(data,options);
+    }
+
+         </script>
 
 
     
