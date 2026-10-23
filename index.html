@@ -37,41 +37,46 @@
   <h2><b>Conference Paper: Investigating the problems faced by Mode Transition Technology behind Turbine Based Combined Cycle Propulsion Systems. </b></h2>
 <hr>
     
-   <!-- Scatter chart display -->
+html
+<!-- Scatter chart display -->
 <div id="scatter_div" style="width: 900px; height: 500px;"></div>
 
-    <script type="text/javascript">
-        function drawChart() {
-            var data = new google.visualization.DataTable();
+<!-- Pie chart display -->
+<div id="pie_div" style="width: 900px; height: 500px;"></div>
 
-            data.addColumn('number', 'Age');
-data.addColumn('number', 'Salary');
-data.addRows([
-[25, 40000],
-[30, 50000],
-[35, 60000],
-[40, 75000],
-[45, 80000],
-[50, 90000]
-]);
-var options = {
-title: 'Age vs. Salary',
-hAxis: { title: 'Age' },
-vAxis: { title: 'Salary' }
-};
-var chart = new google.visualization.ScatterChart(document.getElementById('scatter_div'));
-chart.draw(data, options);
-}
-</script>
-    
 <script type="text/javascript">
-    google.charts.load('current', {
-        'packages': ['corechart']
-    });
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawCharts);
 
-    google.charts.setOnLoadCallback(drawChart);
+    function drawCharts() {
+        drawScatter();
+        drawPie();
+    }
 
-    function drawChart() {
+    function drawScatter() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'Age');
+        data.addColumn('number', 'Salary');
+        data.addRows([
+            [25, 40000],
+            [30, 50000],
+            [35, 60000],
+            [40, 75000],
+            [45, 80000],
+            [50, 90000]
+        ]);
+
+        var options = {
+            title: 'Age vs. Salary',
+            hAxis: { title: 'Age' },
+            vAxis: { title: 'Salary' }
+        };
+
+        var chart = new google.visualization.ScatterChart(document.getElementById('scatter_div'));
+        chart.draw(data, options);
+    }
+
+    function drawPie() {
         var data = google.visualization.arrayToDataTable([
             ['Task', 'Hours per Day'],
             ['Work', 8],
@@ -81,14 +86,9 @@ chart.draw(data, options);
             ['Exercise', 2]
         ]);
 
-        var options = {
-            title: 'My Daily Activities'
-        };
+        var options = { title: 'My Daily Activities' };
 
-        var chart = new google.visualization.PieChart(
-            document.getElementById('chart_div')
-        );
-
+        var chart = new google.visualization.PieChart(document.getElementById('pie_div'));
         chart.draw(data, options);
     }
 </script>
