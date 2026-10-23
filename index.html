@@ -47,7 +47,7 @@
     google.charts.setOnLoadCallback(drawChart)
 
 function drawChart() {
-    var data= google.visulization.arrayToDataTable([
+    var data= google.visualization.arrayToDataTable([
         ['Task','Hours per Day'],
         ['Work',8],
         ['Sleep',8],
@@ -59,7 +59,7 @@ function drawChart() {
         title: 'My Daily Activities'
     };
 
-    var chart = new google.visulization.PieChart(document.getElementById('chart_div'));
+    var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
     chart.draw(data,options);
     }
 
