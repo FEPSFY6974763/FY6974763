@@ -10,7 +10,7 @@
   <body>
 
     <!--bar chart display-->
-    <div id="pie_div" style="width: 900px; height: 1400px;"></div>
+    <div id="bar_div" style="width: 900px; height: 1400px;"></div>
     
     <!--bar chart script-->
     <script>
@@ -21,19 +21,19 @@
     google.charts.setOnLoadCallback(drawCharts);
       function drawCharts() {
         try {
-          drawPie();
-        }
-        { catch (error) {
+          drawBar();
+        
+      } catch (error) {
             console.error("Chart Error", error);
           }
       }
 
-      function drawPie() 
+      function drawBar() {
       var data = google.visualization.arrayToDataTable([
         ['City', 'Population'],
-        ['London', '9648000']
-        ['Birmingham', '1153900']
-        ['Edinburgh', '554000']
+        ['London', 9648000],
+        ['Birmingham', 1153900],
+        ['Edinburgh', 554000]
         
       ]);
 
@@ -41,8 +41,8 @@
             title: 'City Population'
         };
 
-        var chart = new google.visualization.PieChart(
-            document.getElementById('pie_div')
+        var chart = new google.visualization.BarChart(
+            document.getElementById('Bar_div')
         );
 
         chart.draw(data, options);
