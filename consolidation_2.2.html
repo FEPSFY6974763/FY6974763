@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <!--Webpage title-->
+    <title>City Population over 10 Years</title>
+   
+    <!--Load google charts loader script-->
+    <script type="text/javascript"  src="https://www.gstatic.com/charts/loader.js"></script>
+  </head>
+    <body>
+    <!--bar chart display-->
+     <div id="bar_div" style="width: 900px; height: 600px;"></div>
+    
+    <!--bar chart scrip-->
+    <script>
+      google.charts.load('current', {packages: ['corechart']});
+      google.charts.setOnLoadCallback(drawCharts);
+      function drawCharts() {
+        try {
+          drawBar();
+        } catch (error) {
+          console.error("Chart Error", error);
+        }
+      }
+
+      <!--barchart_function-->
+
+    function drawBar() {
+      var data = google.visualization.arrayToDataTable([
+        ['Year', 'London', 'Birmingham', 'Edinburgh'],
+        [2013, 8414000, 1092200, 495000],
+        [2015, 8661000, 1113000, 507000],
+        [2017, 8916000, 1137100, 519000],
+        [2019, 9177000, 1141800, 531000],
+        [2021, 9426000, 1142500, 543000],
+        [2023, 9648000, 1153900, 554000]
+        
+        ]);
+
+      var options = {
+        title: 'City Populations in 2013-23',
+        isStacked: false,
+        colors:['red', 'green', 'blue'],
+        vAxis: { format:'####'}, 
+        hAxis: { format:'#,###'}
+      };
+      
+    var chart = new google.visualization.BarChart(
+      document.getElementById('bar_div')
+      );
+      chart.draw(data,options);
+    }
+      
+        
+        </script>
+    </body>
+</html>
