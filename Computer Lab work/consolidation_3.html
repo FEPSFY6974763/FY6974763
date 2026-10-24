@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+ <!--Webpage title-->
+    <title>Monthly Sales in 2023</title>
+  <!--Load google charts loader script-->
+    <script type="text/javascript"  src="https://www.gstatic.com/charts/loader.js"></script>
+  </head>
+
+  <body>
+    <!--column chart display-->
+    <div id="column_div" style="width: 1600px; height: 600px;"></div>
+
+    <!--column chart script-->
+    <script>
+      google.charts.load('current', {packages: ['corechart']});
+      google.charts.setOnLoadCallback(drawCharts);
+      function drawCharts() {
+        try {
+          drawColumn();
+        } catch(error) {
+          console.error("Chart Error", error);
+        }
+      }
+
+      // column_chart_function
+
+function drawColumn() {
+  var data = google.visualization.arrayToDataTable([
+    ['Month', 'Sales', { role: 'style' }],
+    ['January', 42300, '#800000'],
+    ['February', 38900, '#9A6324'],
+    ['March', 45600, '#808000'],
+    ['April', 47200, '#469990'],
+    ['May', 51800, '#000075'],
+    ['June', 54100, '#000000'],
+    ['July', 56700, '#e6194B'],
+    ['August', 53400, '#f58231'],
+    ['September', 49500, '#ffe119'],
+    ['October', 52300, '#bfef45'],
+    ['November', 68900, '#3cb44b'],
+    ['December', 84600, '#fabed4']
+  ]);
+
+  var options = {
+    title: 'Monthly Sales in 2023',
+    legend: { position: 'none' },
+    vAxis: { format: 'currency' }
+    
+  };
+
+        var chart = new google.visualization.ColumnChart(
+          document.getElementById('column_div')
+          );
+        chart.draw(data,options);
+      }
+         
+    </script>
+  </body>
+</html>
