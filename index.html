@@ -30,16 +30,21 @@
 
       function drawBar() {
       var data = google.visualization.arrayToDataTable([
-        ['City', 'Population', {role: 'style' }],
-        ['London', 9648000, 'red'],
-        ['Birmingham', 1153900, 'blue'],
-        ['Edinburgh', 554000, 'green']
+        ['City', 'London', 'Birmingham', 'Edinburgh'],
+        ['London', 9648000, null, null],
+        ['Birmingham', null, 1153900, null],
+        ['Edinburgh', null, null, 554000]
         
       ]);
 
         var options = {
             title: 'City Population in 2023',
-            legend: { position: 'left' }
+            legend: { position: 'right' },
+          isStacked: true,
+          colors:['red','green','blue'],
+          hAxis: {
+            title: 'Population',
+          }
           
         };
 
