@@ -5,44 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>My Daily Activities</title>
+    <title>Personal Conference Projcet</title>
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-    <style>
-        table {
-            font-family: Arial, sans-serif;
-            border-collapse: collapse;
-            width: 30%;
-        }
-
-        td, th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
-
-        p.ex1 {
-            margin-left: 25px;
-        }
-
-        .mySlides {
-            display: none;
-        }
-
-        body {
-            background-color: #FFFFFF;
-            margin-left: 50px;
-        }
-    </style>
+<style>
+body {
+font-family: "Times New Roman", serif;
+}
+</style>
+    
 </head>
 
 <body>
+
 
     <!-- Image Display -->
     <img src="Uni Of Surrey banner.png" alt="Banner" width="1200" height="300">
@@ -50,28 +26,21 @@
     <h1><b>ENG0018 Computer Laboratory 2026/27</b></h1>
     <h2>Student URN: 6974763</h2>
 
-    <!-- Random Colour Button -->
-    <button id="colorButton">Click me to change color</button>
-
+  
     <hr>
 
     <h2>
-        <b>Conference Paper: Investigating the problems faced by Mode Transition Technology behind Turbine Based Combined Cycle Propulsion Systems.</b>
+        <b>Conference Paper: Mode Transition in Turbine-Based Combined Cycle Propulsion: The Thrust Trap and Routes to its Suppression</b>
     </h2>
 
     <hr>
 
-    <!-- Scatter Chart Display -->
-    <div id="scatter_div" style="width: 900px; height: 500px;"></div>
-
-    <!-- Pie Chart Display -->
-    <div id="pie_div" style="width: 900px; height: 500px;"></div>
-
+   
     <!-- Abstract -->
     <h3 id="Abstract">Abstract</h3>
 
     <div id="Abstract_InText">
-        <pre>lorem ipsum dolor sit amet consectetur adipiscing elit dolore laborum enim id odio nihil culpa in quo quidem quibusdam repellendus culpa elit velit excepteur quo dolores aliqua cillum dolores qui pariatur eos eum ducimus duis reprehenderit expedita officia commodo soluta voluptas tempore magna illum minus laboris cum et et nam aut qui occaecat esse esse eum quis quibusdam eum dolor at laborum nobis et eu tempore provident est aliquip commodo ipsum ipsum aut quis ipsum officia lorem sed non tempore iusto reprehenderit pariatur dolor consectetur esse fuga et lorem nobis quod minus ut qui dolore eos voluptas laboris et sint</pre>
+        <pre></pre>
     </div>
 
     <!-- Introduction -->
@@ -79,7 +48,7 @@
 
     <div id="Introduction_InText">
         <p class="ex1">
-            This is where you should write your introduction.
+            Turbine-based combined cycle (TBCC) propulsion integrates a gas turbine and ramjet or scramjet propulsion cycle into a singular system. The aim is a single system that can provide a “wide speed range, high performance, and reusability” (Guo et al., 2023). TBCC is identified as a “state-of-the-art of propulsion system performance” (Thomas and Walker, 2009), that should be highly valued in development programs due to offering improved specific impulse over rocket-based systems in sub-sonic take-off and return, offering more safety, capability for aircraft-like operations, in addition quick turn arounds, extended lifetime of >1000 flight missions, and two-stage-to-orbit vehicles.  (Thomas and Walker, 2009).  Guo et al. (2023) adds that hypersonic and combined-cycle technologies carry national defence and economic value. Of the 6 enabling technologies identified within the NAI study (Thomas and Walker, 2009), the most critical is mode transition from low speed to the high-speed propulsion systems. This essay aims to explain mode transition, examine the central problem, the ‘thrust trap’, and evaluate the solutions proposed. 
         </p>
     </div>
 
@@ -87,20 +56,27 @@
     <h3 id="Analysis and Discussion">Analysis and Discussion</h3>
 
     <div id="Analysis_InText">
-        <pre>Active Learning (Angluin, 1988, Cohn et al., 1994) is a paradigm where a concept is learnt by an
-intelligent machine through the interaction of an oracle with the machine system, over a sequence of
-learning epochs. A distinctive component in an active system is the querying strategy, used to sample
-candidate training instances from a pool and evaluate them for informativeness, i.e., their potential
-to improve the classification model. Various strategies have been proposed including; Query by
-Committee (Seung et al., 1992), Monte Carlo estimation (Roy and McCallum, 2001), uncertainty
-sampling (Lewis and Gale, 1994) and version space reduction (margin sampling) (Tong and Koller,
-2001). Irrespective of how the most informative pattern instances are chosen at each epoch they are
-presented for labeling, to a machine (database) or human oracle that has knowledge of the class
-labels. After adding the newly labeled instances to the current training set, a revised model is
-subsequently induced. A goal of this process is to achieve an efficient, incremental advancement of
-learning at each epoch. The process is continued until some stopping criterion has been met, such as
-reaching a stage where information from the selected instances is contrary to the model, causing the
-classifier confidence to drop, as in Vlachos (2008).</pre>
+        <pre>
+
+What Mode Transition Is, and How It Works:
+Mode transition is the handover process from the turbine to the ramjet. The handover involves switching the inlet and nozzle flow paths, controlling expansion/compression profiles and fuel flow to the alternate propulsion system (Guo et al., 2023).
+Guo et al. (2023) model this with a transition marker, dT, that moves from 0 to 1 (turbine and ramjet mode respectively). In their simulated engine, dT stays at 0 until Mach 2.5, and at Mach 2.63, dT = 1. The gas turbine is limited to Mach 2.5, so the additional thrust to reach Mach 2.63 is from the ramjet system. During this time, the centre cone rapidly contracts at its maximum rate to meet the ramjet’s needs, raising the flow capture coefficient to almost 100% (Guo et al., 2023), acting as the changing geometry for the handover process. 
+Figure 1. (a) Flight trajectory and mode transition marker dT ; (b) Rate of change of the mode transition markers dT and flight time variation with Mach number. (Guo et al., 2023) 
+He, Zhang and Sun (2023) reference the opening of movable splitters by the entrances of the turbojet and ramjet channels, rather than a variable geometry inlet cone, using variable values of 1 and 0 (fully open and fully closed), over defined Mach ranges, so that airflow is progressively swapped. Their model reaches the same conclusion as Guo et al.’s; that there is a ‘thrust trap’.
+NASA’s work reflects the practical working difficulty. Their scaled model revealed issues with unstart constraints [violet breakdown of supersonic airflow inside an engine duct / intake], distortion / bleed constraints, turbine transients [short periods of undue stress leading to accelerated mechanical failure] all occurring during mode transition (Thomas and Walker, 2009).
+
+The Problem: The Thrust Trap
+            
+The transition point between the propulsion cycles sits at the upper operational limit of the turbine jet, and at the lower operational limit of the ramjet. Therefore thrust and drag become unbalanced, so the aircraft continues decelerating and cannot provide the necessary start conditions for the ramjet. This is the thrust trap (He, Zhang and Sun, 2023).
+This is quantified by Guo et al. (2023). In their simulation, minimum thrust values fell to 23% of the pre-transition value. Additionally, specific impulse [ratio of change in momentum to the mass of fuel used] fell drastically during transition from ≈ 1500 to 675. 
+
+ 
+Solutions under Investigation:
+
+Limitations and Conclusion:
+
+References:
+</pre>
     </div>
 
     <!-- Table of Contents -->
@@ -124,59 +100,20 @@ classifier confidence to drop, as in Vlachos (2008).</pre>
         </tr>
     </table>
 
-    <!-- Table 1: Data on cost and lifespan of bridge repairs -->
-    <h3>Bridge Repair Data</h3>
-
-    <table>
-        <tr>
-            <th>£ Cost of Repairs</th>
-            <th>Lifespan of Repairs (yrs)</th>
-        </tr>
-        <tr>
-            <td>0.7 M</td>
-            <td>2</td>
-        </tr>
-        <tr>
-            <td>3.3 M</td>
-            <td>4</td>
-        </tr>
-        <tr>
-            <td>2.6 M</td>
-            <td>5</td>
-        </tr>
-        <tr>
-            <td>17.4 M</td>
-            <td>7</td>
-        </tr>
-        <tr>
-            <td>8.8 M</td>
-            <td>9</td>
-        </tr>
-    </table>
-
-    <p>
-        <a href="https://www.icevirtuallibrary.com/doi/full/10.1680/jbren.21.00034">
-            Toshihiko et al. (2023)
-        </a>
-    </p>
+ 
 
     <!-- References -->
     <h3 id="References">References</h3>
 
     <pre>
-Angluin, D (1988), Queries and concept learning. Machine learning 2, (4), 319-342
+Thomas, S. and Walker, J. (2009). Overview of the TBCC Discipline. [online] NASA. Available at: https://ntrs.nasa.gov/api/citations/20110012002/downloads/20110012002.pdf [Accessed 19 Oct. 2026].
+        
+Chen, M., Tang, H., Zhang, K., Hui, O. and Wang, Y. (2012). Turbine-based combined cycle propulsion system integration concept design. Proceedings of the Institution of Mechanical Engineers, Part G: Journal of Aerospace Engineering, 227(7), pp.1068–1089. doi:10.1177/0954410012449246.
+        
+Guo, F., Liu, M., He, G., Zhou, J., Zhu, J., & You, Y. (2023). Analysis and suppression of thrust trap for turbo-ramjet mode transition with the Integrated Optimal Control Method. Aerospace, 10(8), 667. https://doi.org/10.3390/aerospace10080667
+        
+He, Z., Zhang, J. and Sun, H. (2023). Optimal control of TBCC engines in mode transition. Energies, [online] 16(4), p.1791. doi:10.3390/en16041791.
 
-Brinker, K (2003), Incorporating Diversity in Active Learning with Support Vector Machines,
-Proceedings of the Twentieth International Conference on Machine Learning (ICML-2003)
-
-Bruzzone, L, Chi, M and Marconcini, M (2006), A novel transductive SVM for semisupervised classification of remote-sensing images,
-IEEE Transactions on Geoscience and Remote Sensing, 44, (11), 3363.
-
-Bruzzone, L and Persello, C (2009), Active learning for classification of remote sensing images.
-In: Geoscience and Remote Sensing Symposium, 2009 IEEE International, IGARSS 2009, 3.
-
-Campbell, C, Cristinini, N and Smola, A (2000), Query learning with large margin classifiers.
-In: Proc. 17th Internat. Conf.on Machine Learning. Morgan Kaufman, Stanford, CA, 111-118
     </pre>
 
     <hr>
@@ -194,79 +131,8 @@ In: Proc. 17th Internat. Conf.on Machine Learning. Morgan Kaufman, Stanford, CA,
     <hr>
 
     <script>
-        // Random Colour Button
-        const button = document.getElementById("colorButton");
-
-        function changeColor() {
-            const randomColor = "#" + Math.floor(Math.random() * 16777215)
-                .toString(16).padStart(6, "0");
-
-            button.style.backgroundColor = randomColor;
-        }
-
-        button.addEventListener("click", changeColor);
-
-
-        // Google Charts
-        google.charts.load("current", {
-            packages: ["corechart"]
-        });
-
-        google.charts.setOnLoadCallback(drawCharts);
-
-        function drawCharts() {
-            drawScatter();
-            drawPie();
-        }
-
-        function drawScatter() {
-            const data = google.visualization.arrayToDataTable([
-                ["Age", "Salary"],
-                [25, 40000],
-                [30, 50000],
-                [35, 60000],
-                [40, 75000],
-                [45, 80000],
-                [50, 90000]
-            ]);
-
-            const options = {
-                title: "Age vs. Salary",
-                hAxis: { title: "Age" },
-                vAxis: { title: "Salary" },
-                legend: "none"
-            };
-
-            const chart = new google.visualization.ScatterChart(
-                document.getElementById("scatter_div")
-            );
-
-            chart.draw(data, options);
-        }
-
-        function drawPie() {
-            const data = google.visualization.arrayToDataTable([
-                ["Task", "Hours per Day"],
-                ["Work", 8],
-                ["Sleep", 8],
-                ["Eat", 2],
-                ["Study", 4],
-                ["Exercise", 2]
-            ]);
-
-            const options = {
-                title: "My Daily Activities"
-            };
-
-            const chart = new google.visualization.PieChart(
-                document.getElementById("pie_div")
-            );
-
-            chart.draw(data, options);
-        }
-
-
-        // GitHub Last Updated Time
+       
+     // GitHub Last Updated Time
         async function getLastUpdatedTime() {
             const username = "nr0025";
             const repo = "FY0025";
