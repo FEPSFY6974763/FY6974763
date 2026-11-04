@@ -1,170 +1,93 @@
-<!doctype html>
 
-<html>
-    <head>
-<title>My Daily Activities</title>
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        
-        
-    </head>
-    
-<body>
-<!--Image Display-->
-    <img src="Uni Of Surrey banner.png" alt="Banner" width="1200" height="300">
-      <h1><b>ENG0018 Computer Laboratory 2026/27</b></h1>
-      <h2>Student URN: 6974763</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--Random Colour Button-->
-     <button id="colorButton">Click me to change color</button>
+    <title>My Daily Activities</title>
 
-    <script>
-        //Get a reference to the buttom element
-        var button = document.getElementById("colorButton");
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-        //Function to change the buttom color
-        function changeColor(){
-            //Generate a random color
-            var randomColor="#"+Math.floor(Math.random()*16777215).toString(16);
-
-            //set the button's background color to the random color
-            button.style.backgroundColor=randomColor;
-        }
-        //Add a click event listener to the button
-        button.addEventListener("click",changeColor);
-    </script>
-    
-   <hr>
-  <h2><b>Conference Paper: Investigating the problems faced by Mode Transition Technology behind Turbine Based Combined Cycle Propulsion Systems. </b></h2>
-<hr>
-    
-
-<!-- Scatter chart display -->
-<div id="scatter_div" style="width: 900px; height: 500px;"></div>
-
-<!-- Pie chart display -->
-<div id="pie_div" style="width: 900px; height: 500px;"></div>
-
-<script>
-    google.charts.load('current', {
-        packages: ['corechart']
-    });
-
-    google.charts.setOnLoadCallback(drawCharts);
-
-    function drawCharts() {
-        try {
-            drawScatter();
-            drawPie();
-        } catch (error) {
-            console.error("Chart error:", error);
-        }
-    }
-
-    function drawScatter() {
-        var data = google.visualization.arrayToDataTable([
-            ['Age', 'Salary'],
-            [25, 40000],
-            [30, 50000],
-            [35, 60000],
-            [40, 75000],
-            [45, 80000],
-            [50, 90000]
-        ]);
-
-        var options = {
-            title: 'Age vs. Salary',
-            hAxis: {
-                title: 'Age'
-            },
-            vAxis: {
-                title: 'Salary'
-            },
-            legend: 'none'
-        };
-
-        var chart = new google.visualization.ScatterChart(
-            document.getElementById('scatter_div')
-        );
-
-        chart.draw(data, options);
-    }
-
-    function drawPie() {
-        var data = google.visualization.arrayToDataTable([
-            ['Task', 'Hours per Day'],
-            ['Work', 8],
-            ['Sleep', 8],
-            ['Eat', 2],
-            ['Study', 4],
-            ['Exercise', 2]
-        ]);
-
-        var options = {
-            title: 'My Daily Activities'
-        };
-
-        var chart = new google.visualization.PieChart(
-            document.getElementById('pie_div')
-        );
-
-        chart.draw(data, options);
-    }
-</script>
-    
-<!style for tables>
-<style>
-    table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 30%;
-
-    }
-
-    td, th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-        
-    }
-
-    tr:nth-child(even) {
-        background-color: #dddddd;
-        
-    }
-    
-
-</style>
-   
-       <style>
-p.ex1 {
-  margin-left: 25px;
-}
-</style>
-      
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        
-    
     <style>
-    .mySlides {
-        display: none;
-    }
+        table {
+            font-family: Arial, sans-serif;
+            border-collapse: collapse;
+            width: 30%;
+        }
 
-    body {
-        background-color: #FFFFFF;
-        margin-left: 50px;
-    }
-</style>
-<hr>
-        <h3 id="Abstract">Abstract</h3>
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
 
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        p.ex1 {
+            margin-left: 25px;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        body {
+            background-color: #FFFFFF;
+            margin-left: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Image Display -->
+    <img src="Uni Of Surrey banner.png" alt="Banner" width="1200" height="300">
+
+    <h1><b>ENG0018 Computer Laboratory 2026/27</b></h1>
+    <h2>Student URN: 6974763</h2>
+
+    <!-- Random Colour Button -->
+    <button id="colorButton">Click me to change color</button>
+
+    <hr>
+
+    <h2>
+        <b>Conference Paper: Investigating the problems faced by Mode Transition Technology behind Turbine Based Combined Cycle Propulsion Systems.</b>
+    </h2>
+
+    <hr>
+
+    <!-- Scatter Chart Display -->
+    <div id="scatter_div" style="width: 900px; height: 500px;"></div>
+
+    <!-- Pie Chart Display -->
+    <div id="pie_div" style="width: 900px; height: 500px;"></div>
+
+    <!-- Abstract -->
+    <h3 id="Abstract">Abstract</h3>
+
+    <div id="Abstract_InText">
+        <pre>lorem ipsum dolor sit amet consectetur adipiscing elit dolore laborum enim id odio nihil culpa in quo quidem quibusdam repellendus culpa elit velit excepteur quo dolores aliqua cillum dolores qui pariatur eos eum ducimus duis reprehenderit expedita officia commodo soluta voluptas tempore magna illum minus laboris cum et et nam aut qui occaecat esse esse eum quis quibusdam eum dolor at laborum nobis et eu tempore provident est aliquip commodo ipsum ipsum aut quis ipsum officia lorem sed non tempore iusto reprehenderit pariatur dolor consectetur esse fuga et lorem nobis quod minus ut qui dolore eos voluptas laboris et sint</pre>
+    </div>
+
+    <!-- Introduction -->
+    <h3 id="Introduction">Introduction</h3>
+
+    <div id="Introduction_InText">
         <p class="ex1">
-            <pre>lorem ipsum dolor sit amet consectetur adipiscing elit dolore laborum enim id odio nihil culpa in quo quidem quibusdam repellendus culpa elit velit excepteur quo dolores aliqua cillum dolores qui pariatur eos eum ducimus duis reprehenderit expedita officia commodo soluta voluptas tempore magna illum minus laboris cum et et nam aut qui occaecat esse esse eum quis quibusdam eum dolor at laborum nobis et eu tempore provident est aliquip commodo ipsum ipsum aut quis ipsum officia lorem sed non tempore iusto reprehenderit pariatur dolor consectetur esse fuga et lorem nobis quod minus ut qui dolore eos voluptas laboris et sint
-            </pre>
-    </p>
-        <p class="id">
-            <pre>
-Active Learning (Angluin, 1988, Cohn et al., 1994) is a paradigm where a concept is learnt by an
+            This is where you should write your introduction.
+        </p>
+    </div>
+
+    <!-- Analysis and Discussion -->
+    <h3 id="Analysis and Discussion">Analysis and Discussion</h3>
+
+    <div id="Analysis_InText">
+        <pre>Active Learning (Angluin, 1988, Cohn et al., 1994) is a paradigm where a concept is learnt by an
 intelligent machine through the interaction of an oracle with the machine system, over a sequence of
 learning epochs. A distinctive component in an active system is the querying strategy, used to sample
 candidate training instances from a pool and evaluate them for informativeness, i.e., their potential
@@ -177,85 +100,258 @@ labels. After adding the newly labeled instances to the current training set, a 
 subsequently induced. A goal of this process is to achieve an efficient, incremental advancement of
 learning at each epoch. The process is continued until some stopping criterion has been met, such as
 reaching a stage where information from the selected instances is contrary to the model, causing the
-classifier confidence to drop, as in Vlachos (2008
-            </pre>
+classifier confidence to drop, as in Vlachos (2008).</pre>
+    </div>
 
-        <h3 id="Analysis and Discussion">
-            Analysis and Discussion
-        </h3>
+    <!-- Table of Contents -->
+    <h3>Table of Contents</h3>
 
-        <p class="ex1">
-            <!table of contents>
-            <table>
-                <tr>
-                    <th><h3>Table of Contents</h3></th>
-                
-                </tr>
-                <tr>
-                    <td><a href="#Abstract">Abstract</td>
-                
-                </tr>
-                <tr>
-                    <td><a href="#Introduction">Introduction</td>
-               
-                </tr>
-                <tr>
-                    <td><a href="#Anaylsis and Discussion">Analysis and Discussion</td>
+    <table>
+        <tr>
+            <th>Contents</th>
+        </tr>
+        <tr>
+            <td><a href="#Abstract">Abstract</a></td>
+        </tr>
+        <tr>
+            <td><a href="#Introduction">Introduction</a></td>
+        </tr>
+        <tr>
+            <td><a href="#Analysis and Discussion">Analysis and Discussion</a></td>
+        </tr>
+        <tr>
+            <td><a href="#References">References</a></td>
+        </tr>
+    </table>
 
-                <tr>
-                    <td><a href="#References">References</td>    
-                
-                </tr>
-            </table>
+    <!-- Table 1: Data on cost and lifespan of bridge repairs -->
+    <h3>Bridge Repair Data</h3>
 
-        <!Table 1: Data on cost and lifespan of bridge repairs>
-<table>
-    <tr>
-        <th>£ Cost of Repairs</th>
-        <th>Lifespan of Repairs (yrs)</th>
-    </tr>
-    <tr>
-        <td>0.7 M</td>
-        <td>2</td>
-    </tr>
-    <tr>
-        <td>3.3 M</td>
-        <td>4</td>
-    </tr>
-    <tr>
-        <td>2.6 M</td>
-        <td>5</td>
-    </tr>
-    <tr>
-        <td>17.4 M</td>
-        <td>7</td>
-    </tr>
-    <tr>
-        <td>8.8 M</td>
-        <td>9</td>
-        
-    </tr>
-</table>
+    <table>
+        <tr>
+            <th>£ Cost of Repairs</th>
+            <th>Lifespan of Repairs (yrs)</th>
+        </tr>
+        <tr>
+            <td>0.7 M</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3.3 M</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>2.6 M</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>17.4 M</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>8.8 M</td>
+            <td>9</td>
+        </tr>
+    </table>
 
-    <a href="https://www.icevirtuallibrary.com/doi/full/10.1680/jbren.21.00034">Toshihiko et al (2023).</a>
-<h3 id="References">References</h3>
-        
-        <p>
-<pre>
+    <p>
+        <a href="https://www.icevirtuallibrary.com/doi/full/10.1680/jbren.21.00034">
+            Toshihiko et al. (2023)
+        </a>
+    </p>
+
+    <!-- References -->
+    <h3 id="References">References</h3>
+
+    <pre>
 Angluin, D (1988), Queries and concept learning. Machine learning 2, (4), 319-342
 
 Brinker, K (2003), Incorporating Diversity in Active Learning with Support Vector Machines,
 Proceedings of the Twentieth International Conference on Machine Learning (ICML-2003)
 
-Bruzzone, L, Chi, M and Marconcini, M (2006), A novel transductive SVM for semisupervised classication of remote-sensing images,
+Bruzzone, L, Chi, M and Marconcini, M (2006), A novel transductive SVM for semisupervised classification of remote-sensing images,
 IEEE Transactions on Geoscience and Remote Sensing, 44, (11), 3363.
 
 Bruzzone, L and Persello, C (2009), Active learning for classification of remote sensing images.
 In: Geoscience and Remote Sensing Symposium, 2009 IEEE International, IGARSS 2009, 3.
 
 Campbell, C, Cristinini, N and Smola, A (2000), Query learning with large margin classifiers.
-In: Proc. 17th Internat. Conf.on Machine Learning. Morgan Kaufman, Stanfrod, CA, 111-118
-            </pre>
-        </p>
-      </body>
+In: Proc. 17th Internat. Conf.on Machine Learning. Morgan Kaufman, Stanford, CA, 111-118
+    </pre>
+
+    <hr>
+
+    <!-- Last Update Time Display -->
+    <div id="last-updated">Loading last update time...</div>
+
+    <button onclick="verifyLastUpdatedTime()" style="display: block; margin: 10px auto; padding: 8px 16px;">
+        Verify Last Modified Time
+    </button>
+
+    <!-- Word Count Display -->
+    <p id="totalWordCount">Calculating word count...</p>
+
+    <hr>
+
+    <script>
+        // Random Colour Button
+        const button = document.getElementById("colorButton");
+
+        function changeColor() {
+            const randomColor = "#" + Math.floor(Math.random() * 16777215)
+                .toString(16).padStart(6, "0");
+
+            button.style.backgroundColor = randomColor;
+        }
+
+        button.addEventListener("click", changeColor);
+
+
+        // Google Charts
+        google.charts.load("current", {
+            packages: ["corechart"]
+        });
+
+        google.charts.setOnLoadCallback(drawCharts);
+
+        function drawCharts() {
+            drawScatter();
+            drawPie();
+        }
+
+        function drawScatter() {
+            const data = google.visualization.arrayToDataTable([
+                ["Age", "Salary"],
+                [25, 40000],
+                [30, 50000],
+                [35, 60000],
+                [40, 75000],
+                [45, 80000],
+                [50, 90000]
+            ]);
+
+            const options = {
+                title: "Age vs. Salary",
+                hAxis: { title: "Age" },
+                vAxis: { title: "Salary" },
+                legend: "none"
+            };
+
+            const chart = new google.visualization.ScatterChart(
+                document.getElementById("scatter_div")
+            );
+
+            chart.draw(data, options);
+        }
+
+        function drawPie() {
+            const data = google.visualization.arrayToDataTable([
+                ["Task", "Hours per Day"],
+                ["Work", 8],
+                ["Sleep", 8],
+                ["Eat", 2],
+                ["Study", 4],
+                ["Exercise", 2]
+            ]);
+
+            const options = {
+                title: "My Daily Activities"
+            };
+
+            const chart = new google.visualization.PieChart(
+                document.getElementById("pie_div")
+            );
+
+            chart.draw(data, options);
+        }
+
+
+        // GitHub Last Updated Time
+        async function getLastUpdatedTime() {
+            const username = "nr0025";
+            const repo = "FY0025";
+
+            const url = `https://api.github.com/repos/${username}/${repo}/commits`;
+
+            try {
+                const response = await fetch(url, {
+                    method: "GET",
+                    headers: {
+                        "Accept": "application/vnd.github.v3+json"
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Error fetching data: ${response.status}`);
+                }
+
+                const commits = await response.json();
+
+                if (commits && commits.length > 0) {
+                    const lastCommitDate = new Date(commits[0].commit.committer.date);
+
+                    document.getElementById("last-updated").textContent =
+                        `Last Modified Time: ${lastCommitDate.toLocaleString()}`;
+                } else {
+                    document.getElementById("last-updated").textContent =
+                        "No commits found in the repository.";
+                }
+
+            } catch (error) {
+                console.error("Error fetching the last updated time:", error);
+
+                document.getElementById("last-updated").textContent =
+                    "Error fetching update time. Please check the repository details.";
+            }
+        }
+
+        async function verifyLastUpdatedTime() {
+            document.getElementById("last-updated").textContent = "Verifying...";
+
+            await getLastUpdatedTime();
+
+            alert("Last modified time has been checked against the GitHub API.");
+        }
+
+
+        // Word Count Function
+        function displayWordCount(sectionId) {
+            const section = document.getElementById(sectionId);
+
+            if (!section) {
+                console.error("Section not found:", sectionId);
+                return 0;
+            }
+
+            const text = section.textContent.trim();
+
+            if (text === "") {
+                return 0;
+            }
+
+            const wordArray = text.split(/\s+/);
+
+            return wordArray.length;
+        }
+
+        function displayTotalWordCount() {
+            const introductionCount = displayWordCount("Introduction_InText");
+            const analysisCount = displayWordCount("Analysis_InText");
+
+            const totalWordCount = introductionCount + analysisCount;
+
+            document.getElementById("totalWordCount").textContent =
+                `Total word count: ${totalWordCount}`;
+        }
+
+
+        // Run functions when the page loads
+        window.addEventListener("load", function () {
+            getLastUpdatedTime();
+            displayTotalWordCount();
+        });
+
+    </script>
+
+</body>
 </html>
